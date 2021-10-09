@@ -14,6 +14,10 @@ namespace View
 {
     public partial class FrmAutor : Form
     {
+        FrmAutorPesquisa frmAutorPesquisa = new FrmAutorPesquisa();
+        Autore autor = new Autore();
+        autorDAL autordal = new autorDAL();
+
         private void LimparTela()
         {
             txtCodigo.Text = string.Empty;
@@ -26,7 +30,6 @@ namespace View
             InitializeComponent();
         }
 
-
         private void btnNovo_Click_1(object sender, EventArgs e)
         {
             LimparTela();
@@ -35,14 +38,11 @@ namespace View
 
         private void btnSalvar_Click_1(object sender, EventArgs e)
         {
-            Autore autor = new Autore();
-            autorDAL autordal = new autorDAL();
-
-
             if (txtNome.Text.Trim() == string.Empty)
             {
                 messages.Show("Nome é um campo obrigatório.", msgType.alert);
                 txtNome.Focus();
+                LimparTela();
             }
             else
             {
@@ -56,6 +56,7 @@ namespace View
 
                     autordal.Salvar(autor);
                     messages.Show("Cadastro realizado com sucesso!", msgType.alert);
+                    LimparTela();
                 }
                 else
                 {
@@ -67,6 +68,7 @@ namespace View
 
                     autordal.Atualizar(autor);
                     messages.Show("Cadastro atualizado com sucesso!", msgType.alert);
+                    LimparTela();
                 }
 
 
@@ -81,24 +83,23 @@ namespace View
             }
             else
             {
-                autorDAL autordal = new autorDAL();
                 autordal.Excluir(int.Parse(txtCodigo.Text));
-                messages.Show("Autor excluída com sucesso!", msgType.alert);
+                messages.Show("Autor excluído com sucesso!", msgType.alert);
+                LimparTela();
             }
             txtNome.Focus();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            FrmAutorPesquisa frmAutorPesquisa = new FrmAutorPesquisa();
             frmAutorPesquisa.ShowDialog();
 
-            if (frmAutorPesquisa.autor.Id >= 0)
+            if (frmAutorPesquisa.autor.Id > 0)
             {
                 txtCodigo.Text = frmAutorPesquisa.autor.Id.ToString();
-                txtNome.Text = frmAutorPesquisa.autor.Nome.ToString();
-                txtPseudomino.Text = frmAutorPesquisa.autor.Pseudomino.ToString();
-                txtObservacao.Text = frmAutorPesquisa.autor.Observacao.ToString();
+                txtNome.Text = frmAutorPesquisa.autor.Nome;
+                txtPseudomino.Text = frmAutorPesquisa.autor.Pseudomino;
+                txtObservacao.Text = frmAutorPesquisa.autor.Observacao;
             }
         }
     }

@@ -1,19 +1,16 @@
 ﻿using DAL;
 using Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View
 {
     public partial class FrmLivro : Form
     {
+        FrmLivrosPesquisa frmLivrosPesquisa = new FrmLivrosPesquisa();
+        private editoraDAL _editoraDAL;
+        Livro livro = new Livro();
+        livroDAL livrodal = new livroDAL();
         private void LimparTela()
         {
             txtCodigo.Text = string.Empty;
@@ -35,10 +32,6 @@ namespace View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Livro livro = new Livro();
-            livroDAL livrodal = new livroDAL();
-
-
             if ((txtNome.Text.Trim() == string.Empty) || (txtAnoPubli.Text.Trim() == string.Empty))
             {
                 messages.Show("Nome e ano de publicação são campos obrigatórios.", msgType.alert);
@@ -54,6 +47,7 @@ namespace View
                     livro.SBN = Int32.Parse(txtSBN.Text);
                     livro.AnoPublicacao = Int32.Parse(txtAnoPubli.Text);
                     livro.Observacao = txtObservacao.Text;
+                    livro.Editora = Int32.Parse(cbSiglaEditora.SelectedValue.ToString());
 
                     livrodal.Salvar(livro);
                     messages.Show("Cadastro realizado com sucesso!", msgType.alert);
@@ -65,7 +59,7 @@ namespace View
                     livro.SBN = Int32.Parse(txtSBN.Text);
                     livro.AnoPublicacao = Int32.Parse(txtAnoPubli.Text);
                     livro.Observacao = txtObservacao.Text;
-
+                    livro.Editora = Int32.Parse(cbSiglaEditora.SelectedValue.ToString());
 
                     livrodal.Atualizar(livro);
                     messages.Show("Cadastro atualizado com sucesso!", msgType.alert);
@@ -81,7 +75,6 @@ namespace View
             }
             else
             {
-                livroDAL livrodal = new livroDAL();
                 livrodal.Excluir(int.Parse(txtCodigo.Text));
                 messages.Show("Editora excluída com sucesso!", msgType.alert);
             }
@@ -90,17 +83,32 @@ namespace View
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            FrmLivrosPesquisa frmLivrosPesquisa = new FrmLivrosPesquisa();
             frmLivrosPesquisa.ShowDialog();
-
-            if(frmLivrosPesquisa.livro.Id>= 0)
+            if(frmLivrosPesquisa.livro.Id > 0)
             {
                 txtCodigo.Text = frmLivrosPesquisa.livro.Id.ToString();
-                txtNome.Text = frmLivrosPesquisa.livro.Nome.ToString();
+                txtNome.Text = frmLivrosPesquisa.livro.Nome;
                 txtSBN.Text = frmLivrosPesquisa.livro.SBN.ToString();
                 txtAnoPubli.Text = frmLivrosPesquisa.livro.AnoPublicacao.ToString();
-                txtObservacao.Text = frmLivrosPesquisa.livro.Observacao.ToString();
+                txtObservacao.Text = frmLivrosPesquisa.livro.Observacao;
+                cbSiglaEditora.SelectedValue = frmLivrosPesquisa.livro.Editora;
             }
+        }
+
+        private void FrmLivro_Load(object sender, EventArgs e)
+        {
+            _editoraDAL = new editoraDAL();
+            CarregarComboEditoras();
+        }
+        private void CarregarComboEditoras()
+        {
+            //apontando de qual metodo o comboBox vai pegar as info
+            cbSiglaEditora.DataSource = _editoraDAL.ListarEditoras();
+            //apontando qual campo o comboBox vai exibir
+            //apontando qual campo o comboBox vai exibir
+            cbSiglaEditora.DisplayMember = "ediNome";
+            //ediId representa o ID da editora
+            cbSiglaEditora.ValueMember = "ediId";
         }
     }
 }

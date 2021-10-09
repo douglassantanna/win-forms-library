@@ -1,13 +1,6 @@
 ﻿using DAL;
 using Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View
@@ -34,6 +27,7 @@ namespace View
             livro.SBN = Int32.Parse(dgLivros[2, vi].Value.ToString());
             livro.AnoPublicacao = Int32.Parse(dgLivros[3, vi].Value.ToString());
             livro.Observacao = dgLivros[4, vi].Value.ToString();
+            livro.Editora = Int32.Parse(dgLivros[5, vi].Value.ToString());
 
         }
 
@@ -45,13 +39,15 @@ namespace View
             dgLivros.Columns[2].HeaderText = "SBN";
             dgLivros.Columns[3].HeaderText = "Ano de publicação";
             dgLivros.Columns[4].HeaderText = "Observações";
+            dgLivros.Columns[5].HeaderText = "Editora";
 
             //definindo largura das colunas do dataGridView
             dgLivros.Columns[0].Width = 40;
-            dgLivros.Columns[1].Width = 180;
+            dgLivros.Columns[1].Width = 140;
             dgLivros.Columns[2].Width = 40;
             dgLivros.Columns[3].Width = 60;
             dgLivros.Columns[4].Width = 150;
+            dgLivros.Columns[5].Width = 40;
 
         }
         public FrmLivrosPesquisa()

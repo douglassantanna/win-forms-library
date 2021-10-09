@@ -71,7 +71,7 @@ namespace View
             this.txtObservacao.Location = new System.Drawing.Point(138, 104);
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(392, 61);
-            this.txtObservacao.TabIndex = 12;
+            this.txtObservacao.TabIndex = 8;
             this.txtObservacao.Text = "";
             // 
             // btnSalvar
@@ -79,7 +79,7 @@ namespace View
             this.btnSalvar.Location = new System.Drawing.Point(138, 180);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(126, 23);
-            this.btnSalvar.TabIndex = 9;
+            this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
@@ -90,14 +90,14 @@ namespace View
             this.txtCodigo.Location = new System.Drawing.Point(4, 40);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(122, 23);
-            this.txtCodigo.TabIndex = 11;
+            this.txtCodigo.TabIndex = 2;
             // 
             // btnRemover
             // 
             this.btnRemover.Location = new System.Drawing.Point(270, 180);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(126, 23);
-            this.btnRemover.TabIndex = 8;
+            this.btnRemover.TabIndex = 11;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = true;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click_1);
@@ -108,7 +108,7 @@ namespace View
             this.lblNome.Location = new System.Drawing.Point(136, 22);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(71, 15);
-            this.lblNome.TabIndex = 1;
+            this.lblNome.TabIndex = 3;
             this.lblNome.Text = "Nome autor";
             // 
             // btnPesquisar
@@ -116,7 +116,7 @@ namespace View
             this.btnPesquisar.Location = new System.Drawing.Point(402, 180);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(126, 23);
-            this.btnPesquisar.TabIndex = 7;
+            this.btnPesquisar.TabIndex = 12;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -126,7 +126,7 @@ namespace View
             this.btnNovo.Location = new System.Drawing.Point(6, 180);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(126, 23);
-            this.btnNovo.TabIndex = 0;
+            this.btnNovo.TabIndex = 9;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click_1);
@@ -137,7 +137,7 @@ namespace View
             this.lblCodigo.Location = new System.Drawing.Point(4, 22);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(46, 15);
-            this.lblCodigo.TabIndex = 10;
+            this.lblCodigo.TabIndex = 1;
             this.lblCodigo.Text = "Código";
             // 
             // txtNome
@@ -145,7 +145,7 @@ namespace View
             this.txtNome.Location = new System.Drawing.Point(136, 40);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(392, 23);
-            this.txtNome.TabIndex = 2;
+            this.txtNome.TabIndex = 4;
             // 
             // lblPseudomino
             // 
@@ -153,7 +153,7 @@ namespace View
             this.lblPseudomino.Location = new System.Drawing.Point(4, 86);
             this.lblPseudomino.Name = "lblPseudomino";
             this.lblPseudomino.Size = new System.Drawing.Size(74, 15);
-            this.lblPseudomino.TabIndex = 3;
+            this.lblPseudomino.TabIndex = 5;
             this.lblPseudomino.Text = "Pseudónimo";
             // 
             // lblObservacao
@@ -162,7 +162,7 @@ namespace View
             this.lblObservacao.Location = new System.Drawing.Point(138, 86);
             this.lblObservacao.Name = "lblObservacao";
             this.lblObservacao.Size = new System.Drawing.Size(74, 15);
-            this.lblObservacao.TabIndex = 4;
+            this.lblObservacao.TabIndex = 7;
             this.lblObservacao.Text = "Observações";
             // 
             // txtPseudomino

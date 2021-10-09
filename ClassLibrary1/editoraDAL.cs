@@ -47,10 +47,10 @@ namespace DAL
             _connSQL = Conexao.ObterConexao();
             _comandoSQL = new SqlCommand();
             _comandoSQL.Connection = _connSQL;
-            _comandoSQL.CommandText = "update tblEditoras" +
+            _comandoSQL.CommandText = "update tblEditoras " +
                                        "set ediNome = @ediNome, " +
                                        "edSigla = @edSigla, " +
-                                       "edObserv = @edObserv, " +
+                                       "edObserv = @edObserv " +
                                        "where ediId = @ediId";
 
             _comandoSQL.Parameters.Add("@ediId", SqlDbType.Int).Value = editora.Id;

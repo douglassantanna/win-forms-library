@@ -132,7 +132,7 @@ namespace View
             this.txtCodigo.Location = new System.Drawing.Point(4, 40);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(122, 23);
-            this.txtCodigo.TabIndex = 112;
+            this.txtCodigo.TabIndex = 2;
             // 
             // lblCodigo
             // 

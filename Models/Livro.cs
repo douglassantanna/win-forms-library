@@ -13,6 +13,7 @@ namespace Models
         private int _anoPublicacao;
         private int _sbn;
         private string _observacao;
+        private int _editora;
 
         public int Id
         {
@@ -38,6 +39,11 @@ namespace Models
         {
             get { return _observacao; }
             set { _observacao = value; }
+        }
+        public int Editora
+        {
+            get { return _editora; }
+            set { _editora = value; }
         }
     }
 }

@@ -7,6 +7,9 @@ namespace View
 {
     public partial class FrmEditora : Form
     {
+        Editora editora = new Editora();
+        editoraDAL editoradal = new editoraDAL();
+        FrmEditoraPesquisa frmEditoraPesquisa = new FrmEditoraPesquisa();
         private void LimparTela()
         {
             txtCodigo.Text = string.Empty;
@@ -25,9 +28,6 @@ namespace View
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Editora editora = new Editora();
-            editoraDAL editoradal = new editoraDAL();
-
             if ((txtNome.Text.Trim() == string.Empty) || (txtSigla.Text.Trim() == string.Empty))
             {
                 messages.Show("Obrigatório preencher campo Nome e Sigla.", msgType.alert);
@@ -45,6 +45,7 @@ namespace View
 
                     editoradal.Salvar(editora);
                     messages.Show("Cadastro realizado com sucesso!", msgType.alert);
+                    LimparTela();
                 }
                 else
                 {
@@ -55,6 +56,7 @@ namespace View
 
                     editoradal.Atualizar(editora);
                     messages.Show("Cadastro atualizado com sucesso!", msgType.alert);
+                    LimparTela();
                 }
             }
         }
@@ -67,24 +69,23 @@ namespace View
             }
             else
             {
-                editoraDAL editoraldal = new editoraDAL();
-                editoraldal.Excluir(int.Parse(txtCodigo.Text));
+                editoradal.Excluir(int.Parse(txtCodigo.Text));
                 messages.Show("Editora excluída com sucesso!", msgType.alert);
+                LimparTela();
             }
             txtNome.Focus();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            FrmEditoraPesquisa frmEditoraPesquisa = new FrmEditoraPesquisa();
             frmEditoraPesquisa.ShowDialog();
 
-            if (frmEditoraPesquisa.editora.Id >= 0)
+            if (frmEditoraPesquisa.editora.Id > 0)
             {
                 txtCodigo.Text = frmEditoraPesquisa.editora.Id.ToString();
-                txtNome.Text = frmEditoraPesquisa.editora.Nome.ToString();
-                txtSigla.Text = frmEditoraPesquisa.editora.Sigla.ToString();
-                txtObservacao.Text = frmEditoraPesquisa.editora.Observacao.ToString();
+                txtNome.Text = frmEditoraPesquisa.editora.Nome;
+                txtSigla.Text = frmEditoraPesquisa.editora.Sigla;
+                txtObservacao.Text = frmEditoraPesquisa.editora.Observacao;
             }
         }
     }

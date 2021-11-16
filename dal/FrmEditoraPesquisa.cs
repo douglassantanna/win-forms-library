@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Models;
+using Regras;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,7 @@ namespace View
     public partial class FrmEditoraPesquisa : Form
     {
         public Editora editora = new Editora();
-        private editoraDAL _editoraDal;
-
+        RegraEditora _regraEditora = new RegraEditora();
         public FrmEditoraPesquisa()
         {
             InitializeComponent();
@@ -24,10 +24,8 @@ namespace View
 
         private void _carregarGridEditoras()
         {
-            _editoraDal = new editoraDAL();
-
             dgEditoras.AutoGenerateColumns = true;
-            dgEditoras.DataSource = _editoraDal.ListarEditoras();
+            dgEditoras.DataSource = _regraEditora.ListarDados();
         }
         private void _selecionarGridEditoras()
         {

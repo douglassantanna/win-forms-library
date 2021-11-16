@@ -1,13 +1,7 @@
 ﻿using DAL;
 using Models;
+using Regras;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace View
@@ -15,14 +9,12 @@ namespace View
     public partial class FrmAutorPesquisa : Form
     {
         public Autore autor = new Autore();
-        private autorDAL _autorDAL;
+        RegraAutor _regraAutor = new RegraAutor();
 
         private void _carregarGridAutores()
         {
-            _autorDAL = new autorDAL();
-
             dgAutores.AutoGenerateColumns = true;
-            dgAutores.DataSource = _autorDAL.ListasAutores();
+            dgAutores.DataSource = _regraAutor.ListarDados();
         }
 
         private void _selecionarGridAutores()

@@ -47,12 +47,14 @@ namespace View
             // 
             // btnNovo
             // 
+            this.btnNovo.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnNovo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnNovo.Location = new System.Drawing.Point(6, 252);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(126, 23);
             this.btnNovo.TabIndex = 9;
             this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // lblNome
@@ -98,32 +100,38 @@ namespace View
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnPesquisar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPesquisar.Location = new System.Drawing.Point(402, 252);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(126, 23);
             this.btnPesquisar.TabIndex = 12;
             this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnRemover
             // 
+            this.btnRemover.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnRemover.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnRemover.Location = new System.Drawing.Point(270, 252);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(126, 23);
             this.btnRemover.TabIndex = 11;
             this.btnRemover.Text = "Remover";
-            this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.UseVisualStyleBackColor = false;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnSalvar
             // 
+            this.btnSalvar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSalvar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSalvar.Location = new System.Drawing.Point(138, 252);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(126, 23);
             this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtCodigo

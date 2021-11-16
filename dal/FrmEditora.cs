@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Models;
+using Regras;
 using System;
 using System.Windows.Forms;
 
@@ -7,8 +8,8 @@ namespace View
 {
     public partial class FrmEditora : Form
     {
+        RegraEditora _regraEditora = new RegraEditora();
         Editora editora = new Editora();
-        editoraDAL editoradal = new editoraDAL();
         FrmEditoraPesquisa frmEditoraPesquisa = new FrmEditoraPesquisa();
         private void LimparTela()
         {
@@ -28,37 +29,45 @@ namespace View
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if ((txtNome.Text.Trim() == string.Empty) || (txtSigla.Text.Trim() == string.Empty))
+            try
             {
-                messages.Show("Obrigatório preencher campo Nome e Sigla.", msgType.alert);
-                txtNome.Focus();
-            }
-            else
-            {
-                if(txtCodigo.Text == string.Empty)
+                if ((txtNome.Text.Trim() == string.Empty) || (txtSigla.Text.Trim() == string.Empty))
                 {
-                    txtCodigo.Text = editoradal.ObterProximoId().ToString();
-                    editora.Id = Int32.Parse(txtCodigo.Text);
-                    editora.Nome = txtNome.Text;
-                    editora.Sigla = txtSigla.Text;
-                    editora.Observacao = txtObservacao.Text;
-
-                    editoradal.Salvar(editora);
-                    messages.Show("Cadastro realizado com sucesso!", msgType.alert);
-                    LimparTela();
+                    messages.Show("Obrigatório preencher campo Nome e Sigla.", msgType.alert);
+                    txtNome.Focus();
                 }
                 else
                 {
-                    editora.Id = Int32.Parse(txtCodigo.Text);
-                    editora.Nome = txtNome.Text;
-                    editora.Sigla = txtSigla.Text;
-                    editora.Observacao = txtObservacao.Text;
+                    if (txtCodigo.Text == string.Empty)
+                    {
+                        txtCodigo.Text = _regraEditora.ObterProximoID().ToString();
+                        editora.Id = Int32.Parse(txtCodigo.Text);
+                        editora.Nome = txtNome.Text;
+                        editora.Sigla = txtSigla.Text;
+                        editora.Observacao = txtObservacao.Text;
 
-                    editoradal.Atualizar(editora);
-                    messages.Show("Cadastro atualizado com sucesso!", msgType.alert);
-                    LimparTela();
+                        _regraEditora.Salvar(editora);
+                        messages.Show("Cadastro realizado com sucesso!", msgType.alert);
+                        LimparTela();
+                    }
+                    else
+                    {
+                        editora.Id = Int32.Parse(txtCodigo.Text);
+                        editora.Nome = txtNome.Text;
+                        editora.Sigla = txtSigla.Text;
+                        editora.Observacao = txtObservacao.Text;
+
+                        _regraEditora.Atualizar(editora);
+                        messages.Show("Cadastro atualizado com sucesso!", msgType.alert);
+                        LimparTela();
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+                messages.Show(ex.Message.ToString(), msgType.error);
+            }
+            
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -69,7 +78,7 @@ namespace View
             }
             else
             {
-                editoradal.Excluir(int.Parse(txtCodigo.Text));
+                _regraEditora.Excluir(int.Parse(txtCodigo.Text));
                 messages.Show("Editora excluída com sucesso!", msgType.alert);
                 LimparTela();
             }

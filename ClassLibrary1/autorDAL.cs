@@ -1,4 +1,5 @@
 ﻿using Models;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -25,23 +26,31 @@ namespace DAL
 
             return Id;
         }
-        public void Salvar(Autore autor)
+        public void Salvar(Autore Parautor)
         {
-            //insert
-            _connSQL = Conexao.ObterConexao();
-            _comandoSQL = new SqlCommand();
-            _comandoSQL.Connection = _connSQL;
-            _comandoSQL.CommandText = "insert into tblAutores  (autId, autNome, autPseudomino, autObserv)" +
-                                                    "values (@autId, @autNome, @autPseudomino, @autObserv)";
+            try
+            {
+                //insert
+                _connSQL = Conexao.ObterConexao();
+                _comandoSQL = new SqlCommand();
+                _comandoSQL.Connection = _connSQL;
+                _comandoSQL.CommandText = "insert into tblAutores  (autId, autNome, autPseudomino, autObserv)" +
+                                                        "values (@autId, @autNome, @autPseudomino, @autObserv)";
 
-            _comandoSQL.Parameters.Add("@autId", SqlDbType.Int).Value = autor.Id;
-            _comandoSQL.Parameters.Add("@autNome", SqlDbType.VarChar).Value = autor.Nome;
-            _comandoSQL.Parameters.Add("@autPseudomino", SqlDbType.VarChar).Value = autor.Pseudomino;
-            _comandoSQL.Parameters.Add("@autObserv", SqlDbType.VarChar).Value = autor.Observacao;
+                _comandoSQL.Parameters.Add("@autId", SqlDbType.Int).Value = Parautor.Id;
+                _comandoSQL.Parameters.Add("@autNome", SqlDbType.VarChar).Value = Parautor.Nome;
+                _comandoSQL.Parameters.Add("@autPseudomino", SqlDbType.VarChar).Value = Parautor.Pseudomino;
+                _comandoSQL.Parameters.Add("@autObserv", SqlDbType.VarChar).Value = Parautor.Observacao;
 
-            _comandoSQL.ExecuteNonQuery();
+                _comandoSQL.ExecuteNonQuery();
 
-            Conexao.FecharConexao();
+                Conexao.FecharConexao();
+            }
+            
+            catch (Exception ex)
+            {
+                 throw new Exception("AutorDAL: " + ex.Message);
+            }
         }
         public void Atualizar(Autore autor)
         {
@@ -78,13 +87,13 @@ namespace DAL
             Conexao.FecharConexao();
 
         }
-        public DataTable ListasAutores()
+        public DataTable ListarAutores()
         {
             //select
             _connSQL = Conexao.ObterConexao();
             _comandoSQL = new SqlCommand();
             _comandoSQL.Connection = _connSQL;
-            _comandoSQL.CommandText = "select autId  ,autNome  ,autPseudomino  ,autObserv  " +
+            _comandoSQL.CommandText = "select autId, autNome, autPseudomino, autObserv  " +
             " from tblAutores  " +
             " order by autId asc";
 
@@ -96,11 +105,6 @@ namespace DAL
 
             return _Tabela;
         }
-
-        /*public List<Editora> ListarTodasEditora()
-        {
-
-        }*/
     }
 }
     

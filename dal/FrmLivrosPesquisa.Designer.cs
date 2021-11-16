@@ -41,7 +41,8 @@ namespace View
             this.dgLivros.AllowUserToAddRows = false;
             this.dgLivros.AllowUserToDeleteRows = false;
             this.dgLivros.AllowUserToResizeRows = false;
-            this.dgLivros.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgLivros.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgLivros.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgLivros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLivros.Location = new System.Drawing.Point(12, 12);
             this.dgLivros.MultiSelect = false;
@@ -53,32 +54,38 @@ namespace View
             // 
             // btnSelecionar
             // 
+            this.btnSelecionar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSelecionar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSelecionar.Location = new System.Drawing.Point(276, 273);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(75, 23);
             this.btnSelecionar.TabIndex = 1;
             this.btnSelecionar.Text = "&Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.UseVisualStyleBackColor = false;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // btnAtualizar
             // 
+            this.btnAtualizar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAtualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAtualizar.Location = new System.Drawing.Point(371, 273);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 2;
             this.btnAtualizar.Text = "&Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnSair
             // 
+            this.btnSair.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSair.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSair.Location = new System.Drawing.Point(468, 273);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 3;
             this.btnSair.Text = "&Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // FrmLivrosPesquisa

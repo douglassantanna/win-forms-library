@@ -38,32 +38,38 @@ namespace View
             // 
             // btnSair
             // 
+            this.btnSair.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSair.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSair.Location = new System.Drawing.Point(468, 273);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 4;
             this.btnSair.Text = "&Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnAtualizar
             // 
+            this.btnAtualizar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAtualizar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAtualizar.Location = new System.Drawing.Point(371, 273);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 3;
             this.btnAtualizar.Text = "&Atualizar";
-            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.UseVisualStyleBackColor = false;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnSelecionar
             // 
+            this.btnSelecionar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnSelecionar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSelecionar.Location = new System.Drawing.Point(276, 273);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(75, 23);
             this.btnSelecionar.TabIndex = 2;
             this.btnSelecionar.Text = "&Selecionar";
-            this.btnSelecionar.UseVisualStyleBackColor = true;
+            this.btnSelecionar.UseVisualStyleBackColor = false;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // dgEditoras
@@ -71,7 +77,7 @@ namespace View
             this.dgEditoras.AllowUserToAddRows = false;
             this.dgEditoras.AllowUserToDeleteRows = false;
             this.dgEditoras.AllowUserToResizeRows = false;
-            this.dgEditoras.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgEditoras.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgEditoras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgEditoras.Location = new System.Drawing.Point(12, 12);
             this.dgEditoras.MultiSelect = false;

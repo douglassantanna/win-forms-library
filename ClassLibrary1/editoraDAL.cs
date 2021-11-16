@@ -93,9 +93,5 @@ namespace DAL
 
             return _Tabela;
         }
-        /*public List<Editora> ListarTodasEditora()
-        {
-
-        }*/
     }
 }

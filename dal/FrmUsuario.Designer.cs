@@ -1,7 +1,7 @@
 ﻿
 namespace View
 {
-    partial class FrmLivro
+    partial class FrmUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,9 @@ namespace View
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblSiglaEdit = new System.Windows.Forms.Label();
-            this.cbSiglaEditora = new System.Windows.Forms.ComboBox();
-            this.txtAnoPubli = new System.Windows.Forms.MaskedTextBox();
-            this.txtSBN = new System.Windows.Forms.MaskedTextBox();
-            this.lblAnoPubli = new System.Windows.Forms.Label();
-            this.txtObservacao = new System.Windows.Forms.RichTextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnRemover = new System.Windows.Forms.Button();
@@ -44,19 +41,15 @@ namespace View
             this.btnNovo = new System.Windows.Forms.Button();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblSBN = new System.Windows.Forms.Label();
-            this.lblObservacao = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblSiglaEdit);
-            this.groupBox1.Controls.Add(this.cbSiglaEditora);
-            this.groupBox1.Controls.Add(this.txtAnoPubli);
-            this.groupBox1.Controls.Add(this.txtSBN);
-            this.groupBox1.Controls.Add(this.lblAnoPubli);
-            this.groupBox1.Controls.Add(this.txtObservacao);
+            this.groupBox1.Controls.Add(this.txtSenha);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.lblSenha);
             this.groupBox1.Controls.Add(this.btnSalvar);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.btnRemover);
@@ -65,76 +58,45 @@ namespace View
             this.groupBox1.Controls.Add(this.btnNovo);
             this.groupBox1.Controls.Add(this.lblCodigo);
             this.groupBox1.Controls.Add(this.txtNome);
-            this.groupBox1.Controls.Add(this.lblSBN);
-            this.groupBox1.Controls.Add(this.lblObservacao);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Controls.Add(this.lblEmail);
+            this.groupBox1.Location = new System.Drawing.Point(12, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(566, 281);
-            this.groupBox1.TabIndex = 13;
+            this.groupBox1.Size = new System.Drawing.Size(560, 228);
+            this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Livros";
+            this.groupBox1.Text = "Usuários";
             // 
-            // lblSiglaEdit
+            // txtSenha
             // 
-            this.lblSiglaEdit.AutoSize = true;
-            this.lblSiglaEdit.Location = new System.Drawing.Point(355, 86);
-            this.lblSiglaEdit.Name = "lblSiglaEdit";
-            this.lblSiglaEdit.Size = new System.Drawing.Size(96, 15);
-            this.lblSiglaEdit.TabIndex = 9;
-            this.lblSiglaEdit.Text = "Nome da editora";
+            this.txtSenha.Location = new System.Drawing.Point(369, 122);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(159, 23);
+            this.txtSenha.TabIndex = 8;
             // 
-            // cbSiglaEditora
+            // txtEmail
             // 
-            this.cbSiglaEditora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSiglaEditora.FormattingEnabled = true;
-            this.cbSiglaEditora.Location = new System.Drawing.Point(355, 104);
-            this.cbSiglaEditora.Name = "cbSiglaEditora";
-            this.cbSiglaEditora.Size = new System.Drawing.Size(173, 23);
-            this.cbSiglaEditora.TabIndex = 10;
+            this.txtEmail.Location = new System.Drawing.Point(136, 122);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(214, 23);
+            this.txtEmail.TabIndex = 6;
             // 
-            // txtAnoPubli
+            // lblSenha
             // 
-            this.txtAnoPubli.Location = new System.Drawing.Point(144, 104);
-            this.txtAnoPubli.Mask = "00000";
-            this.txtAnoPubli.Name = "txtAnoPubli";
-            this.txtAnoPubli.Size = new System.Drawing.Size(159, 23);
-            this.txtAnoPubli.TabIndex = 8;
-            this.txtAnoPubli.ValidatingType = typeof(int);
-            // 
-            // txtSBN
-            // 
-            this.txtSBN.Location = new System.Drawing.Point(6, 104);
-            this.txtSBN.Mask = "00000";
-            this.txtSBN.Name = "txtSBN";
-            this.txtSBN.Size = new System.Drawing.Size(100, 23);
-            this.txtSBN.TabIndex = 6;
-            this.txtSBN.ValidatingType = typeof(int);
-            // 
-            // lblAnoPubli
-            // 
-            this.lblAnoPubli.AutoSize = true;
-            this.lblAnoPubli.Location = new System.Drawing.Point(144, 86);
-            this.lblAnoPubli.Name = "lblAnoPubli";
-            this.lblAnoPubli.Size = new System.Drawing.Size(159, 15);
-            this.lblAnoPubli.TabIndex = 7;
-            this.lblAnoPubli.Text = "Ano de publicação (ex: 1994)";
-            // 
-            // txtObservacao
-            // 
-            this.txtObservacao.Location = new System.Drawing.Point(6, 167);
-            this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(522, 65);
-            this.txtObservacao.TabIndex = 12;
-            this.txtObservacao.Text = "";
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.Location = new System.Drawing.Point(369, 104);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(39, 15);
+            this.lblSenha.TabIndex = 7;
+            this.lblSenha.Text = "Senha";
             // 
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnSalvar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalvar.Location = new System.Drawing.Point(138, 252);
+            this.btnSalvar.Location = new System.Drawing.Point(153, 170);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(126, 23);
-            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -151,10 +113,10 @@ namespace View
             // 
             this.btnRemover.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnRemover.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRemover.Location = new System.Drawing.Point(270, 252);
+            this.btnRemover.Location = new System.Drawing.Point(285, 170);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(126, 23);
-            this.btnRemover.TabIndex = 15;
+            this.btnRemover.TabIndex = 11;
             this.btnRemover.Text = "Remover";
             this.btnRemover.UseVisualStyleBackColor = false;
             this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
@@ -172,10 +134,10 @@ namespace View
             // 
             this.btnPesquisar.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnPesquisar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPesquisar.Location = new System.Drawing.Point(402, 252);
+            this.btnPesquisar.Location = new System.Drawing.Point(417, 170);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(126, 23);
-            this.btnPesquisar.TabIndex = 16;
+            this.btnPesquisar.TabIndex = 12;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -184,10 +146,10 @@ namespace View
             // 
             this.btnNovo.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnNovo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNovo.Location = new System.Drawing.Point(6, 252);
+            this.btnNovo.Location = new System.Drawing.Point(21, 170);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Size = new System.Drawing.Size(126, 23);
-            this.btnNovo.TabIndex = 13;
+            this.btnNovo.TabIndex = 9;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
@@ -208,33 +170,23 @@ namespace View
             this.txtNome.Size = new System.Drawing.Size(392, 23);
             this.txtNome.TabIndex = 4;
             // 
-            // lblSBN
+            // lblEmail
             // 
-            this.lblSBN.AutoSize = true;
-            this.lblSBN.Location = new System.Drawing.Point(4, 86);
-            this.lblSBN.Name = "lblSBN";
-            this.lblSBN.Size = new System.Drawing.Size(87, 15);
-            this.lblSBN.TabIndex = 5;
-            this.lblSBN.Text = "SBN (números)";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(138, 104);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(41, 15);
+            this.lblEmail.TabIndex = 5;
+            this.lblEmail.Text = "E-mail";
             // 
-            // lblObservacao
-            // 
-            this.lblObservacao.AutoSize = true;
-            this.lblObservacao.Location = new System.Drawing.Point(6, 149);
-            this.lblObservacao.Name = "lblObservacao";
-            this.lblObservacao.Size = new System.Drawing.Size(74, 15);
-            this.lblObservacao.TabIndex = 11;
-            this.lblObservacao.Text = "Observações";
-            // 
-            // FrmLivro
+            // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 306);
+            this.ClientSize = new System.Drawing.Size(587, 268);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmLivro";
-            this.Text = "Livro";
-            this.Load += new System.EventHandler(this.FrmLivro_Load);
+            this.Name = "FrmUsuario";
+            this.Text = "Usuario";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -244,7 +196,9 @@ namespace View
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox txtObservacao;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Button btnRemover;
@@ -253,12 +207,6 @@ namespace View
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label lblSBN;
-        private System.Windows.Forms.Label lblObservacao;
-        private System.Windows.Forms.Label lblAnoPubli;
-        private System.Windows.Forms.MaskedTextBox txtSBN;
-        private System.Windows.Forms.MaskedTextBox txtAnoPubli;
-        private System.Windows.Forms.ComboBox cbSiglaEditora;
-        private System.Windows.Forms.Label lblSiglaEdit;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

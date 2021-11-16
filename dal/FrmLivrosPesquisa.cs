@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Models;
+using Regras;
 using System;
 using System.Windows.Forms;
 
@@ -7,15 +8,13 @@ namespace View
 {
     public partial class FrmLivrosPesquisa : Form
     {
+        RegraLivro _regraLivro = new RegraLivro();
         public Livro livro = new Livro();
-        private livroDAL _livroDAL;
 
         private void _carregarGridLivros()
         {
-            _livroDAL = new livroDAL();
-
             dgLivros.AutoGenerateColumns = true;
-            dgLivros.DataSource = _livroDAL.ListasLivros();
+            dgLivros.DataSource = _regraLivro.ListarDados();
         }
         private void _selecionarGridLivros()
         {

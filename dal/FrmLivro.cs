@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Models;
+using Regras;
 using System;
 using System.Windows.Forms;
 
@@ -7,10 +8,10 @@ namespace View
 {
     public partial class FrmLivro : Form
     {
+        RegraLivro _regraLivro = new RegraLivro();
         FrmLivrosPesquisa frmLivrosPesquisa = new FrmLivrosPesquisa();
         private editoraDAL _editoraDAL;
         Livro livro = new Livro();
-        livroDAL livrodal = new livroDAL();
         private void LimparTela()
         {
             txtCodigo.Text = string.Empty;
@@ -32,38 +33,45 @@ namespace View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if ((txtNome.Text.Trim() == string.Empty) || (txtAnoPubli.Text.Trim() == string.Empty))
+            try
             {
-                messages.Show("Nome e ano de publicação são campos obrigatórios.", msgType.alert);
-                txtNome.Focus();
-            }
-            else
-            {
-                if (txtCodigo.Text == string.Empty)
+                if ((txtNome.Text.Trim() == string.Empty) || (txtAnoPubli.Text.Trim() == string.Empty))
                 {
-                    txtCodigo.Text = livrodal.ObterProximoId().ToString();
-                    livro.Id = Int32.Parse(txtCodigo.Text);
-                    livro.Nome = txtNome.Text;
-                    livro.SBN = Int32.Parse(txtSBN.Text);
-                    livro.AnoPublicacao = Int32.Parse(txtAnoPubli.Text);
-                    livro.Observacao = txtObservacao.Text;
-                    livro.Editora = Int32.Parse(cbSiglaEditora.SelectedValue.ToString());
-
-                    livrodal.Salvar(livro);
-                    messages.Show("Cadastro realizado com sucesso!", msgType.alert);
+                    messages.Show("Nome e ano de publicação são campos obrigatórios.", msgType.alert);
+                    txtNome.Focus();
                 }
                 else
                 {
-                    livro.Id = Int32.Parse(txtCodigo.Text);
-                    livro.Nome = txtNome.Text;
-                    livro.SBN = Int32.Parse(txtSBN.Text);
-                    livro.AnoPublicacao = Int32.Parse(txtAnoPubli.Text);
-                    livro.Observacao = txtObservacao.Text;
-                    livro.Editora = Int32.Parse(cbSiglaEditora.SelectedValue.ToString());
+                    if (txtCodigo.Text == string.Empty)
+                    {
+                        txtCodigo.Text = _regraLivro.ObterProximoID().ToString();
+                        livro.Id = Int32.Parse(txtCodigo.Text);
+                        livro.Nome = txtNome.Text;
+                        livro.SBN = Int32.Parse(txtSBN.Text);
+                        livro.AnoPublicacao = Int32.Parse(txtAnoPubli.Text);
+                        livro.Observacao = txtObservacao.Text;
+                        livro.Editora = Int32.Parse(cbSiglaEditora.SelectedValue.ToString());
 
-                    livrodal.Atualizar(livro);
-                    messages.Show("Cadastro atualizado com sucesso!", msgType.alert);
+                        _regraLivro.Salvar(livro);
+                        messages.Show("Cadastro realizado com sucesso!", msgType.alert);
+                    }
+                    else
+                    {
+                        livro.Id = Int32.Parse(txtCodigo.Text);
+                        livro.Nome = txtNome.Text;
+                        livro.SBN = Int32.Parse(txtSBN.Text);
+                        livro.AnoPublicacao = Int32.Parse(txtAnoPubli.Text);
+                        livro.Observacao = txtObservacao.Text;
+                        livro.Editora = Int32.Parse(cbSiglaEditora.SelectedValue.ToString());
+
+                        _regraLivro.Atualizar(livro);
+                        messages.Show("Cadastro atualizado com sucesso!", msgType.alert);
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                messages.Show(ex.Message.ToString(), msgType.error);
             }
         }
 
@@ -75,7 +83,7 @@ namespace View
             }
             else
             {
-                livrodal.Excluir(int.Parse(txtCodigo.Text));
+                _regraLivro.Excluir(int.Parse(txtCodigo.Text));
                 messages.Show("Editora excluída com sucesso!", msgType.alert);
             }
             txtNome.Focus();

@@ -72,6 +72,7 @@ namespace View
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(159, 23);
             this.txtSenha.TabIndex = 8;
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 

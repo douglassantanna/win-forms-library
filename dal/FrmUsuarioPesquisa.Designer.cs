@@ -98,7 +98,7 @@ namespace View
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.dgUsuarios);
             this.Name = "FrmUsuarioPesquisa";
-            this.Text = "FrmUsuarioPesquisa";
+            this.Text = "Pesquisar Usuário";
             this.Load += new System.EventHandler(this.FrmUsuarioPesquisa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuarios)).EndInit();
             this.ResumeLayout(false);

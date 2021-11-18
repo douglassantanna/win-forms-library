@@ -47,5 +47,11 @@ namespace dal
             us.ShowDialog();
 
         }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSobre sb = new FrmSobre();
+            sb.ShowDialog();
+        }
     }
 }

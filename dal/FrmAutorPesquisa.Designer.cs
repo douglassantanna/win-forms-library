@@ -98,7 +98,7 @@ namespace View
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.dgAutores);
             this.Name = "FrmAutorPesquisa";
-            this.Text = "FrmAutorPesquisa";
+            this.Text = "Pesquisar Autor";
             this.Load += new System.EventHandler(this.FrmAutorPesquisa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgAutores)).EndInit();
             this.ResumeLayout(false);

@@ -36,7 +36,6 @@ namespace View
                 {
                     messages.Show("Nome é um campo obrigatório.", msgType.alert);
                     txtNome.Focus();
-                    LimparTela();
                 }
                 else
                 {

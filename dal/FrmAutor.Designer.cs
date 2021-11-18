@@ -187,7 +187,7 @@ namespace View
             this.ClientSize = new System.Drawing.Size(594, 252);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmAutor";
-            this.Text = "FrmAutor";
+            this.Text = "Autor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

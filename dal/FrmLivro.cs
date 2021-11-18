@@ -54,6 +54,7 @@ namespace View
 
                         _regraLivro.Salvar(livro);
                         messages.Show("Cadastro realizado com sucesso!", msgType.alert);
+                        LimparTela();
                     }
                     else
                     {
@@ -66,6 +67,7 @@ namespace View
 
                         _regraLivro.Atualizar(livro);
                         messages.Show("Cadastro atualizado com sucesso!", msgType.alert);
+                        LimparTela();
                     }
                 }
             }
@@ -85,6 +87,7 @@ namespace View
             {
                 _regraLivro.Excluir(int.Parse(txtCodigo.Text));
                 messages.Show("Editora excluída com sucesso!", msgType.alert);
+                LimparTela();
             }
             txtNome.Focus();
         }

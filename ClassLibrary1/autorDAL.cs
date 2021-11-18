@@ -58,7 +58,7 @@ namespace DAL
             _connSQL = Conexao.ObterConexao();
             _comandoSQL = new SqlCommand();
             _comandoSQL.Connection = _connSQL;
-            _comandoSQL.CommandText = "update tblAutores" +
+            _comandoSQL.CommandText = "update tblAutores " +
                                        "set autNome = @autNome, " +
                                        "autPseudomino = @autPseudomino, " +
                                        "autObserv = @autObserv " +
